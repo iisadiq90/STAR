@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '#s') {
-        message.reply('!!!!');
+        message.reply('yas');
       }
 });
 

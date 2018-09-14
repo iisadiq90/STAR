@@ -7,7 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '#s') {
-        message.reply('yas');
+        message.reply('@everyone ||
+من هنا يتم تفعيل ألاعضاء 
+أضغط على الأيموجي لأختيار ألرتبة');
       }
 });
 

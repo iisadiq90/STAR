@@ -24,7 +24,7 @@ client.on("message", message => {
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   message.guild.members.filter(m => m.presence.status !== 'all')
-})
+});
  message.channel.send(`**:OK1: تم الأرسال**`); 
  message.delete(); 
 };     

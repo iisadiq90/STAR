@@ -19,13 +19,12 @@ client.on('message', message => {
 
 client.on("message", message => {
 
-            if (message.content.startsWith("!bc")) {
+            if (message.content.startsWith(prefix + "bc4")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   message.guild.members.filter(m => m.presence.status !== 'all')
-});
- message.channel.send(`**:OK1: تم الأرسال**`); 
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` : عدد الاعضاء المستلمين`); 
  message.delete(); 
 };     
 });

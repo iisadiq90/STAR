@@ -23,10 +23,10 @@ client.on("message", message => {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
-message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
- m.send(` `);
+message.guild.members.filter(m => m.presence.status !== 'all')
+.forEach(m => {m.send(` `);
 })
- message.channel.send(`:OK1:**تم الأرسال**`); 
+ message.channel.send(` :OK1:  **تم الأرسال**`); 
  message.delete(); 
 };     
 });

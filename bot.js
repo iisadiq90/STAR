@@ -24,30 +24,6 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-if (message.author.id === client.user.id) return;
-if (message.guild) {
-let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == '!bc') {
-if(!message.channel.guild) return message.reply('** وت ار يو دونك ؟ هذا الأمر فقط داخل السيرفر **');         
-if (!args[1]) {
-return;
-}
-  message.guild.members.forEach(m => {
-if(!message.member.hasPermission('ADMINISTRATOR')) return;
-      var bc = new Discord.RichEmbed()
-      .addField('# | الرسالة ', args)
-      m.sendMessage(args)
-  });
-         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("** #shop انت لست ادمن في السيرفر يمكنك شراء الادمن من**");
-  const AziRo = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  message.channel.sendEmbed(AziRo);
-}
-} else {
-  return;
-}
-});
 
 
 

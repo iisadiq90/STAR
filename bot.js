@@ -6,7 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === '!s') {
+    if (message.content === '#s') {
         message.reply('yas');
       }
 });
@@ -45,13 +45,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message=> {
-    if (message.author.bot) return;
-    if (message.isMentioned(client.user))
-    {
-    message.reply(" هلا !!");
-    }
-});
+
 
 
 

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "s#!";
+ const prefix = "!!";
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -117,18 +117,9 @@ client.on('message', message=> {
 
 
 
-  client.on('messageUpdate', (oldRebel, newRebel) => {
-    console.log("عصو مآ يحآول التعديل.");
-   if (newRebel.content.toUpperCase().match(/DISCORD.GG/i))
-    {
-        console.log(newRebel.author.name + " حاول النشر عبر تعديل الرسآلة - " + newRebel);
-           newRebel.delete().catch(O_o=>{}); 
-           newRebel.author.send("ممنوع روآبط الدسكورد. \n إذآ كنت تريد النشر توآصل من الإدآرة.");
-    }
-});
-
-
-  client.on("message", message => { 
+  client.on("message", message => {
+    var prefix = "--"; // غير هنا حط البرفكس
+ 
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
@@ -136,11 +127,19 @@ client.on('message', message=> {
         msg = parseInt();
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("",  .setTitle("**:white_check_mark:  - تم مسح الرسائل**")).then(msg => {msg.delete(2500)});
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل بنجاح",
+        footer: {
+          text: "STAR"
+        }
+      }}).then(msg => {msg.delete(3000)});
                           }
 
      
 });
+  
 
 
 

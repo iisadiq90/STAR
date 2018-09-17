@@ -88,17 +88,14 @@ client.on('message', message=> {
 
 
 
-
-
-  var botid = ["YOUR BOT ID HERE"];
    client.on('message', message => {
        if(message.content.startsWith(prefix + "invite")){
            if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
            var embed = new Discord.RichEmbed()
            .setTitle("Invite Me !.")
-           .setURL(`https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=${botid}`)
+           .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=489839312150593556&permissions=1610087927&scope=bot$`)
            .setTimestamp()
-           .setColor("RANDOM")
+           .setColor("#ff006c")
            message.channel.send({embed})
        }
    });

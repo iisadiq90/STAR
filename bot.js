@@ -136,10 +136,7 @@ client.on('message', message=> {
         msg = parseInt();
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
-        color: 0x06DF00,
-        .setTitle(" :white_check_mark: - تم مسح الرسائل"),
-      }}).then(msg => {msg.delete(2500)});
+      message.channel.sendMessage("**:white_check_mark:  - تم مسح الرسائل**").then(msg => {msg.delete(2500)});
                           }
 
      

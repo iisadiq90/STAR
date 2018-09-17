@@ -26,7 +26,7 @@ client.on("message", message => {
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
  m.send(`${argresult}`);
 })
- message.channel.send(`:OK:** -  تم الأرسال **`); 
+ message.channel.send(`:white_check_mark:** -  تم الأرسال **`); 
  message.delete(); 
 };     
 });
@@ -103,42 +103,51 @@ client.on('message', message=> {
 
 
 
-client.on('message', msg => {
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
 
-    if(command === "clear") {
-        const emoji = client.emojis.find("name", "wastebasket")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***``ضع عدد الرسائل التي تريد مسحها 👌``***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("``php\nعدد الرسائل التي تم مسحها: " + textxt + "\n``").then(m => m.delete(3000));
-        }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  client.on('messageUpdate', (oldRebel, newRebel) => {
+    console.log("عصو مآ يحآول التعديل.");
+   if (newRebel.content.toUpperCase().match(/DISCORD.GG/i))
+    {
+        console.log(newRebel.author.name + " حاول النشر عبر تعديل الرسآلة - " + newRebel);
+           newRebel.delete().catch(O_o=>{}); 
+           newRebel.author.send("ممنوع روآبط الدسكورد. \n إذآ كنت تريد النشر توآصل من الإدآرة.");
     }
-}
 });
 
 
+  client.on("message", message => { 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: " :white_check_mark: - تم مسح الرسائل",
+        footer: {
+          text: "STAR" // غير هنا حط اسم البوت
+        }
+      }}).then(msg => {msg.delete(2500)});
+                          }
 
-
-
-
-
-
-
-
-
-
-
+     
+});
 
 
 

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "!";
+ const prefix = "s#!";
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -137,12 +137,8 @@ client.on('message', message=> {
       
       message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
       message.channel.sendMessage("", {embed: {
-        title: "Done | تــم",
         color: 0x06DF00,
         description: " :white_check_mark: - تم مسح الرسائل",
-        footer: {
-          text: "STAR" // غير هنا حط اسم البوت
-        }
       }}).then(msg => {msg.delete(2500)});
                           }
 

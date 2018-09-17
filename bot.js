@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "!!";
+ const prefix = "s#";
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -117,9 +117,7 @@ client.on('message', message=> {
 
 
 
-  client.on("message", message => {
-    var prefix = "--"; // غير هنا حط البرفكس
- 
+  client.on("message", message => { 
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');

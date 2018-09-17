@@ -90,32 +90,18 @@ client.on('message', message=> {
 
 
 
-  const arraySort = require('array-sort'),
-table = require('table');
-
-client.on('message' , async (message) => {
-
-    if(message.content.startsWith(prefix + "topinvite")) {
-
-  let invites = await message.guild.fetchInvites();
-
-    invites = invites.array();
-
-    arraySort(invites, 'uses', { reverse: true });
-
-    let possibleInvites = [['الدعوات', 'الاشخاص']];
-    invites.forEach(i => {
-      possibleInvites.push([i.inviter.username , i.uses]);
-    })
-    const embed = new Discord.RichEmbed()
-    .setColor(0x7289da)
-    .setTitle("دعوات السيرفر")
-    .addField(' المتصدرين' , `${table.table(possibleInvites)}`)
-
-    message.channel.send(embed)
-    }
-});
-
+  var botid = ["YOUR BOT ID HERE"];
+   client.on('message', message => {
+       if(message.content.startsWith(`${prefix}invite`)){
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+           var embed = new Discord.RichEmbed()
+           .setTitle("Invite Me !.")
+           .setURL(`https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=${botid}`)
+           .setTimestamp()
+           .setColor("RANDOM")
+           message.channel.send({embed})
+       }
+   });
 
 
 

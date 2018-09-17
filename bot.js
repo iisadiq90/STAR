@@ -93,7 +93,7 @@ client.on('message', message=> {
            if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
            var embed = new Discord.RichEmbed()
            .setTitle("Invite Me !.")
-           .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=489839312150593556&permissions=1610087927&scope=bot$`)
+           .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=489839312150593556&permissions=1610087927&scope=bot`)
            .setTimestamp()
            .setColor("#ff006c")
            message.channel.send({embed})

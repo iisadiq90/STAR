@@ -103,7 +103,7 @@ client.on('message', message=> {
 
 
 
-
+var messagesDeleted = messages.array().length;
 client.on('message', message => {       
 if (message.content.startsWith(prefix + 'clear')) { 
     if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!'); 
@@ -114,7 +114,7 @@ if (message.content.startsWith(prefix + 'clear')) {
     if (args > 99) return message.reply("**:octagonal_sign: || يجب ان يكون عدد المسح أقل من 100 .**").then(messages => messages.delete(5000))
     if(!messagecount) args = '100';
     message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
-    message.channel.send(`**${args}** - :white_check_mark:**تم مسح ألرسائل**`).then(messages => messages.delete(5000));
+    message.channel.send(`**' + 'messagecount' + '** - :white_check_mark:**تم مسح ألرسائل**`).then(messages => messages.delete(5000));
   }
   });
 

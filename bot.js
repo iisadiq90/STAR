@@ -27,20 +27,10 @@ if (message.content.startsWith(prefix + "ban")) {
 
     mention.ban("By: " + message.author.tag);
     
-    message.channel.send("**:white_check_mark: تم أعطاء باند **);
+    message.channel.send("**:white_check_mark  - تم أعطاء باند **);
 };
 });
 
-client.on('message', message => {
-if (message.content.startsWith(prefix + "unban")) {
-    var mention = message.mentions.members.first();
-    if(!mention) return message.channel.send("يجب منشن العضو");
-
-    mention.unban("By: " + message.author.tag);
-    
-    message.channel.send("تم ألغاء الباند);
-};
-});
 
 
 client.on('message', message => {
@@ -50,7 +40,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
     mention.kick("By: " + message.author.tag);
     
-    message.channel.send("** :white_check_mark: تم ألطرد**");
+    message.channel.send("** :white_check_mark:  - تم ألطرد**");
 };
 });
 

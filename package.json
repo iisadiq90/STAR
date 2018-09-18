@@ -1,8 +1,4 @@
 {
-   npm i dateformat
-   npm i canvas
-   npm i jimp 
-   npm i moment
   "name": "DefinitelyNotBot",
   "description": "A Discord bot coded in Discord.JS, hosted using Heroku.",
   "version": "1.0.0",
@@ -13,5 +9,10 @@
   "dependencies": {
     "discord.js": "11.1.0",
     "request": "2.81.0"
+     npm i dateformat
+npm i canvas
+npm i jimp 
+npm i moment 
+
   }
 }

@@ -27,7 +27,7 @@ if (message.content.startsWith(prefix + "ban")) {
 
     mention.ban("By: " + message.author.tag);
     
-    message.channel.send("تم أعطاء باند الى : " + mention.tag);
+    message.channel.send("تم أعطاء باند الى : " + message.mentions.members());
 };
 });
 
@@ -38,7 +38,7 @@ if (message.content.startsWith(prefix + "unban")) {
 
     mention.unban("By: " + message.author.tag);
     
-    message.channel.send("تم ألغاء الباند : " + mention.tag);
+    message.channel.send("تم ألغاء الباند : " + message.mentions.members());
 };
 });
 

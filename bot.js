@@ -31,10 +31,28 @@ if (message.content.startsWith(prefix + "ban")) {
 };
 });
 
+client.on('message', message => {
+if (message.content.startsWith(prefix + "unban")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
+
+    mention.unban("By: " + message.author.tag);
+    
+    message.channel.send("تم ألغاء الباند : " + mention.tag);
+};
+});
 
 
+client.on('message', message => {
+if (message.content.startsWith(prefix + "kick")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
 
-
+    mention.kick("By: " + message.author.tag);
+    
+    message.channel.send("تم طرد : " + mention.tag);
+};
+});
 
 
 

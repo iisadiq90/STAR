@@ -28,22 +28,20 @@ if (message.content.startsWith(prefix + "ban")) {
     mention.ban("By: " + message.author.tag);
     
     message.channel.send(" ** :white_check_mark  - تم أعطاء باند  ** );
-};
-});
+
 
 
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + "kick")) {
+if (message.content.startsWith("ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
-    mention.kick("By: " + message.author.tag);
+    mention.ban("By: " + message.author.tag);
     
-    message.channel.send(" ** :white_check_mark:  - تم ألطرد** ");
+    message.channel.send("تم أعطاء ألباند");
 };
 });
-
 
 
 

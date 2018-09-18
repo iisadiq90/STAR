@@ -50,7 +50,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
     mention.kick("By: " + message.author.tag);
     
-    message.channel.send("تم طرد : " + mention.tag);
+    message.channel.send("تم طرد : " + mention);
 };
 });
 

@@ -27,7 +27,7 @@ if (message.content.startsWith(prefix + "ban")) {
 
     mention.ban("By: " + message.author.tag);
     
-    message.channel.send("تم أعطاء باند الى : " + message.mentions.members());
+    message.channel.send("**:white_check_mark: تم أعطاء باند **);
 };
 });
 
@@ -38,7 +38,7 @@ if (message.content.startsWith(prefix + "unban")) {
 
     mention.unban("By: " + message.author.tag);
     
-    message.channel.send("تم ألغاء الباند : " + message.mentions.members());
+    message.channel.send("تم ألغاء الباند);
 };
 });
 
@@ -50,7 +50,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
     mention.kick("By: " + message.author.tag);
     
-    message.channel.send("تم طرد : " + mention);
+    message.channel.send("** :white_check_mark: تم ألطرد**");
 };
 });
 

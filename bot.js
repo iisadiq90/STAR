@@ -27,7 +27,7 @@ if (message.content.startsWith(prefix + "ban")) {
 
     mention.ban("By: " + message.author.tag);
     
-    message.channel.send("تم أعطاء ألباند);
+    message.channel.send("**تم أعطاء ألباند**");
 };
 });
 
@@ -40,7 +40,7 @@ if (message.content.startsWith("kick")) {
 
     mention.kick("By: " + message.author.tag);
     
-    message.channel.send("تم ألطرد");
+    message.channel.send("**تم ألطرد**");
 };
 });
 

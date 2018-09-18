@@ -21,7 +21,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-if (message.content.startsWith("ban")) {
+if (message.content.startsWith(prefix + "ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -33,7 +33,7 @@ if (message.content.startsWith("ban")) {
 
 
 client.on('message', message => {
-if (message.content.startsWith("kick")) {
+if (message.content.startsWith(prefix + "kick")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 

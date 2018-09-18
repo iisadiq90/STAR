@@ -17,9 +17,9 @@ client.on('message', message => {
 
 
 const dateFormat = require('dateformat');
-var Canvas = require('canvas');
-var jimp = require('jimp');
-var moment = require("moment");
+const Canvas = require('canvas');
+const jimp = require('jimp');
+const moment = require("moment");
 
 
 

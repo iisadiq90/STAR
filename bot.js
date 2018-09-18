@@ -20,29 +20,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-if (message.content.startsWith(prefix + "ban")) {
-    var mention = message.mentions.members();
-    if(!mention) return message.channel.send("يجب منشن العضو");
 
-    mention.ban("By: " + message.author.tag);
-    
-    message.channel.send("**تم أعطاء ألباند**");
-};
-});
-
-
-
-client.on('message', message => {
-if (message.content.startsWith("kick")) {
-    var mention = message.mentions.members();
-    if(!mention) return message.channel.send("يجب منشن العضو");
-
-    mention.kick("By: " + message.author.tag);
-    
-    message.channel.send("**تم ألطرد**");
-};
-});
 
 
 

@@ -23,7 +23,10 @@ client.on('message', message => {
 
 
 
-
+const dateFormat = require('dateformat');
+var Canvas = require('canvas');
+var jimp = require('jimp');
+var moment = require("moment");
 client.on('message', message => {
 
     if(message.content.startsWith(prefix + 'id')) {

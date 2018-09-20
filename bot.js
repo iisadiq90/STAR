@@ -81,6 +81,71 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
 
+  client.on('message', message => {
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "kick") {
+               if(!message.channel.guild) return message.reply('** This command only for servers**');
+         
+  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
+  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
+  let user = message.mentions.users.first();
+  
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if (!message.guild.member(user)
+  .bannable) return message.reply("**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد طرده**");
+
+
+  message.guild.member(user).kick(7, user);
+
+message.channel.send(`**:white_check_mark: ${user.tag} KICK from the server ! :airplane: **  `)
+
+}
+});
+
+
+/*client.on('message',function(message) {
+    let toKick = message.mentions.users.first();
+    let toReason = message.content.split(" ").slice(2).join(" ");
+    let toEmbed = new Discord.RichEmbed()
+   if(message.content.startsWith(prefix + 'kick')) {
+       if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('**# - You dont have enough permissions!**');
+       if(toKick.bannable) return message.reply("**# - I cannot kick someone with a higher role than me!**");
+       if(!toReason) return message.reply("**# - Supply a reason!**")
+       if(toKick.id === message.author.id) return message.reply("**# You cannot kick yourself!**")
+       if(!message.guild.member(toKick).bannable) return message.reply("**# - I cannot ban this person!**")
+       let toEmbed;
+       toEmbed = new Discord.RichEmbed()
+       .setTitle("You have been kicked from a server!")
+       .setThumbnail(toKick.avatarURL)
+       .addField("**# - Server:**",message.guild.name,true)
+       .addField("**# - Reason:**",toReason,true)
+       .addField("**# - Kicked By:**",message.author,true)
+       if(message.member.hasPermission("KICK_MEMBERS")) return (
+           toKick.sendMessage({embed: toEmbed}).then(() => message.guild.member(toKick).kick()).then(() => message.channel.send(`**# Done! I kicked: ${toKick}**`))
+       )
+       }
+});*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

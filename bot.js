@@ -101,8 +101,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
   if (!message.guild.member(user).bannable) return message.reply("**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد طرده**");
 
 
-  message.guild.member(user).kick(7, user);
-
+  message.guild.member(user).kick();
 message.channel.send(`**:white_check_mark: ${user.tag} KICK from the server ! :airplane: **  `)
 
 }

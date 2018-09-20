@@ -98,11 +98,10 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
   let user = message.mentions.users.first();
   
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
-  if (!message.guild.member(user)
-  .bannable) return message.reply("**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد طرده**");
+  if (!message.guild.member(user).bannable) return message.reply("**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد طرده**");
 
 
-  message.guild.member(user).kick;
+  message.guild.member(user).kick(7, user);
 
 message.channel.send(`**:white_check_mark: ${user.tag} KICK from the server ! :airplane: **  `)
 

@@ -320,7 +320,6 @@ client.on('message', msg => {
   let command = msg.content.split(" ")[0];
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
-  let textxtss = 100;
 
     if(command === "clear") {
         const emoji = client.emojis.find("name", "wastebasket")
@@ -328,13 +327,12 @@ client.on('message', msg => {
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
     msg.delete().then
-    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(2500));
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
 } else {
     msg.delete().then
     msg.delete().then
-    msg.channel.bulkDelete(textxtss);
-    msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxtss + "\n```").then(m => m.delete(2500));
-
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
         }    
     }
 }

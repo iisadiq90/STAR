@@ -108,28 +108,6 @@ message.channel.send(`**:white_check_mark: ${user.tag} KICK from the server ! :a
 });
 
 
-/*client.on('message',function(message) {
-    let toKick = message.mentions.users.first();
-    let toReason = message.content.split(" ").slice(2).join(" ");
-    let toEmbed = new Discord.RichEmbed()
-   if(message.content.startsWith(prefix + 'kick')) {
-       if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('**# - You dont have enough permissions!**');
-       if(toKick.bannable) return message.reply("**# - I cannot kick someone with a higher role than me!**");
-       if(!toReason) return message.reply("**# - Supply a reason!**")
-       if(toKick.id === message.author.id) return message.reply("**# You cannot kick yourself!**")
-       if(!message.guild.member(toKick).bannable) return message.reply("**# - I cannot ban this person!**")
-       let toEmbed;
-       toEmbed = new Discord.RichEmbed()
-       .setTitle("You have been kicked from a server!")
-       .setThumbnail(toKick.avatarURL)
-       .addField("**# - Server:**",message.guild.name,true)
-       .addField("**# - Reason:**",toReason,true)
-       .addField("**# - Kicked By:**",message.author,true)
-       if(message.member.hasPermission("KICK_MEMBERS")) return (
-           toKick.sendMessage({embed: toEmbed}).then(() => message.guild.member(toKick).kick()).then(() => message.channel.send(`**# Done! I kicked: ${toKick}**`))
-       )
-       }
-});*/
 
 
 
@@ -141,7 +119,24 @@ message.channel.send(`**:white_check_mark: ${user.tag} KICK from the server ! :a
 
 
 
-
+client.on('message', function(msg) {
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField(':globe_with_meridians:** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+      .addField(':medal:** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField(':red_circle:**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField(':large_blue_circle:**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField(':pencil:**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField(':microphone:**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+      .addField(':id:**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+      .addField(':date:**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
 
 
 

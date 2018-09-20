@@ -212,7 +212,7 @@ let serverEmbed = new Discord.RichEmbed()
 .addField("Server ID", message.guild.id);
 
 return message.channel.send(serverEmbed);
-})
+});
   
 
 

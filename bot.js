@@ -29,7 +29,8 @@ client.on("message", message => {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all');
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+  m.send(`${argresult}`);
   })
   message.channel.send(`:white_check_mark: **-تم الأرسال **`);
   message.delete();

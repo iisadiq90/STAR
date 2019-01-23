@@ -47,7 +47,6 @@ client.on('message', message => {
   
   var bc = new
        Discord.RichEmbed()
-       .setColor('RANDOM')
        .addField('الرسالة', args);
     m.send({ embed: bc })
     msg.delete();

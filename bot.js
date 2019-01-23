@@ -46,8 +46,8 @@ client.on('message', message => {
     message.guild.members.forEach(m => {
   
   var bc = new
-       Discord.RichEmbed()
-       .addField('الرسالة', args);
+       Discord.Rich()
+       .addField(args);
     m.send({ embed: bc })
     msg.delete();
     })

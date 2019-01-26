@@ -212,33 +212,33 @@ client.on('message', function(msg) {
 
 
 client.on('message', message => {
-
-    if (message.content === ".mc") {
-                        if(!message.channel.guild) return message.reply(' This command only for servers');
-
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: false
-
-           }).then(() => {
-               message.reply("تم تقفيل الشات :white_check_mark: ")
-           });
-             }
-//™¦༺♚ƙἶղց|MaS♚༺¦™#7105
-if (message.content === ".umc") {
-    if(!message.channel.guild) return message.reply(' This command only for servers');
-
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: true
-
-           }).then(() => {
-               message.reply("تم فتح الشات:white_check_mark:")
-           });
-             }
-
-
-
+ 
+       if(message.content === prefix + "mc") {
+                           if(!message.channel.guild) return message.reply('** This command only for servers**');
+ 
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            SEND_MESSAGES: false
+ 
+              }).then(() => {
+                  message.reply("**__تم تقفيل الشات__ :white_check_mark: **")
+              });
+                }
+//viper
+    if(message.content === prefix + "umc") {
+                        if(!message.channel.guild) return message.reply('** This command only for servers**');
+ 
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            SEND_MESSAGES: true
+ 
+              }).then(() => {
+                  message.reply("**__تم فتح الشات__:white_check_mark:**")
+              });
+                }
+               
+         
+       
 });
 
 
@@ -283,7 +283,7 @@ client.on('message', message=> {
            if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
            var embed = new Discord.RichEmbed()
            .setTitle("Invite Me !.")
-           .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=489839312150593556&permissions=1610087927&scope=bot`)
+           .setURL(`http://discord.gg/7phAVbd`)
            .setTimestamp()
            .setColor("#ff006c")
            message.channel.send({embed})
@@ -297,7 +297,28 @@ client.on('message', message=> {
 
 
 
-
+client.on('message', message => {
+ if (message.content.includes('discord.gg')){
+                     if(!message.channel.guild) return message.reply ('')
+                 if (!message.member.hasPermissions(['MANAGE_MESSAGES'])){
+    message.delete()
+     var member = message.member
+   
+ 
+       
+          member.ban().then((member) => {
+              message.channel.send("", {embed: {
+              author: {
+              },
+              title: 'بسبب النشر ' + member.displayName + ' تم طرد',
+              color: 490101,
+              }
+            });
+        }
+      )
+    }
+}
+});
 
 
 

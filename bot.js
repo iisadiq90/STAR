@@ -53,7 +53,7 @@ client.on('message', message => { // هاذا للبرودكسات
 			sendBC.on('collect', r => {
 				        message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
+            var bc = new Discord.Rich()
             .addField(args)
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});

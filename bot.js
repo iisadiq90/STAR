@@ -21,7 +21,7 @@ client.on('message', message => {
 
 client.on("message", message => {
 
-            if (message.content.startsWith(prefix + "bc")) {
+            if (message.content.startsWith(prefix + "bco")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
@@ -41,7 +41,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : sadiq ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`#bc | sadiq`,"http://twitch.tv/sadiq90")
+client.user.setGame(` sadiq`,"http://twitch.tv/sadiq90")
 client.user.setStatus("dnd")
 });
 

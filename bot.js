@@ -15,6 +15,10 @@ client.on('message', message => {
 
 
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+ 
 client.on('message', message => {
    
     let args = message.content.split(' ').slice(1).join(' ');
@@ -26,7 +30,7 @@ client.on('message', message => {
  
   if (message.content.startsWith('.bc')) {
           if (!args[0]) {
-message.channel.send("***اكتب شيء مثل: im donkey*");
+message.channel.send("**اكتب شي**");
 return;
 }
 message.guild.members.forEach(m => {

@@ -13,6 +13,12 @@ client.on('message', message => {
 
 
 
+client.on("ready", () => {
+let channel =     client.channels.get("564897763662495764")
+setInterval(function() {
+channel.send(`super spam على عناد احمد`);
+}, 30)
+})
 
 
 client.on('ready', () => {

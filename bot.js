@@ -21,11 +21,6 @@ channel.send(`1ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIc
 })
 
 
-client.on('ready', () => {
-
-  console.log(Logged in as ${client.user.tag}!);
-
-});
 
  
 

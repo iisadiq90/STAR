@@ -47,11 +47,11 @@ client.on('message', message => {
 
  
 
-  if (message.content.startsWith('$bc')) {
+  if (message.content.startsWith('.bc')) {
 
           if (!args[0]) {
 
-message.channel.send("$bc <message>");
+message.channel.send(".bc <message>");
 
 return;
 
@@ -61,7 +61,7 @@ message.guild.members.forEach(m => {
 
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
 
-   m.send('${args} ${m}');
+   m.send(`${args} ${m}`);
 
  
 
@@ -82,7 +82,7 @@ client.on("message", message => {
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
- m.send(`${argresult}\n ${m}`);
+ m.send(`${argresult} ${m}`);
 })
  message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
  message.delete(); 

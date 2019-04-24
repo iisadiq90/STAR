@@ -16,7 +16,7 @@ client.on('message', message => {
 client.on("ready", () => {
 let channel =     client.channels.get("564897763662495764")
 setInterval(function() {
-channel.send(`super spam على عناد احمد`);
+channel.send(`1ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas31231ArTIcdreamskdas3123`);
 }, 30)
 })
 
@@ -41,7 +41,7 @@ return;
 }
 message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-   m.send(`${args}`);
+   if(message.content.includes('[user]')){m.send(`${args} ${m}`)};
  
 });
   }

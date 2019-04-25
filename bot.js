@@ -138,16 +138,7 @@ client.on("message", message => {
 });
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : sadiq`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : sadiq ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` sadiq`,"http://twitch.tv/sadiq90")
-client.user.setStatus("dnd")
-});
+
 
 
 

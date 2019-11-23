@@ -233,7 +233,7 @@ var config = {
   events: [
     {type: "CHANNEL_CREATE", logType: "CHANNEL_CREATE", limit: 2, delay: 10000},
     {type: "CHANNEL_DELETE", logType: "CHANNEL_DELETE", limit: 2, delay: 10000},
-    {type: "GUILD_MEMBER_REMOVE", logType: "MEMBER_KICK", limit: 4, delay: 10000},
+    {type: "GUILD_MEMBER_REMOVE", logType: "MEMBER_KICK", limit: 2, delay: 10000},
     {type: "GUILD_BAN_ADD", logType: "MEMBER_BAN_ADD", limit: 2, delay: 10000},
     {type: "GUILD_ROLE_CREATE", logType: "ROLE_CREATE", limit: 2, delay: 10000},
     {type: "GUILD_ROLE_DELETE", logType: "ROLE_DELETE", limit: 2, delay: 10000},
